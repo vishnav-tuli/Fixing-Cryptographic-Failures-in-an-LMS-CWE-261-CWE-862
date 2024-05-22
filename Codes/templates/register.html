@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <script src="{{ url_for('static', filename='sha512.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+      console.log(jsSHA); // Add this line to check if jsSHA is available
+    </script>
+  </head>
+  <body>
+    <h1>User Registration</h1>
+    <form id="registerForm" action="/register" method="post">
+      <label for="username">username:</label><br />
+      <input type="text" id="username" name="username" required /><br />
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" name="password" required /><br />
+      <label for="role">Role:</label><br />
+      <select id="role" name="role">
+        <option value="student">Student</option>
+        <option value="teacher">Teacher</option></select
+      ><br />
+      <input type="submit" value="Register" />
+    </form>
+    <div id="message"></div>
+  </body>
+</html>
